@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Photo Gallery</title>
+		<link rel="stylesheet" media="all" href="css/style.css" />
+		<link rel="stylesheet" media="screen" href="css/colorbox.css" /> 
+		<script src="js/modernizr-2.5.1.js"></script>
+	</head>
+
+	<body>
+		<header id="branding">
+			<hgroup>
+				<h1><a href="index.html" title="jdhunt.net" rel="home">Photo Gallery</a></h1>
+			</hgroup>
+			<form method="get" id="searchform" action="search.html">
+				<div id="searchFields">     
+					<input type="text" value="Enter search text" name="s" id="s" onfocus="if (this.value == 'Enter search text') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter search text';}" />
+					<input type="image" src="images/go.png" align="top" alt="Search" class="go" value="Search" />
+				</div>
+			</form>
+		</header>
+
+		<div id="main">	
+			<div id="content" role="main" class="contentArea">
+				<div id="submenu">
+					<a href="index.html">Photos</a> >> <span id="photosetTitle"></span>
+					<div id="slide"><a id="slideshowLink" title="See the slideshow for this photoset" target="_blank">Slideshow</a></div>
+				</div>
+			
+				<p id="setDescription"></p>
+				
+				<div id="thumbnails" class="thumbs"></div>
+				
+				<div id="photosetMain" class="photoRight">
+					<div id="loading"></div>
+				
+					<div id="photoContainer">
+						<img id="selectedPhoto" />
+						<div id="photoMetadata">
+							<div id="photoCounter">
+								<div id="prevButton"></div>
+								<div id="nextButton"></div>
+								<span id="photoNumber">1</span> of <span id="photosCount"></span>
+							</div>
+							<div id="dateTaken"></div>
+							<br />
+						</div>
+			   
+						<h3 id="photoTitle"></h3>
+						<p id="photoDescription"></p>
+				
+						<p id="tags" class="smaller">Tags: <a href="tags.html?tag=beach">beach</a>, <a href="tags.html?tag=hawaii">Hawaii</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js?ver=1.7.1'></script>
+	<script src="js/flickr-min.js"></script>
+	<script src="js/photoGallery.js"></script>
+	<script src="js/jquery.colorbox-min.js"></script>
+	<script src='js/jquery.dateFormat-1.0.js'></script>
+	<script>
+		$(document).ready(function () {
+			var mode = getParameterByName('mode');
+			var photosetId = getParameterByName('id');
+			loadPhotoset(photosetId, mode);
+		})
+	</script>
+</html>

@@ -1,0 +1,276 @@
+/*
+Theme Name: Shenandoah
+Theme URI: http://jdhunt.net
+Description: The stylesheet for the photogallery, using the Shenandoah theme from my personal website
+Author: Jon Hunt
+Version: 1.1
+License: GNU General Public License
+License URI: license.txt
+Tags: green, nature, shenandoah
+*/
+
+/* HTML elements */
+header, nav, article, footer, address {  
+	display: block;  
+}  
+body {
+    margin: 0; 
+    padding: 0; 
+    font-family: Verdana, sans-serif;
+}
+img {
+    border: 1px solid #ccc;
+	max-width: 100%;
+	height: auto;
+}
+h1, h2 {
+	color: #87421F;
+}
+h3 {
+	color: #666;
+}
+a:link,
+a:visited,
+a:active {
+	color: #006595;
+	text-decoration: none;
+}
+a:hover {
+	color: #930;
+}
+
+/* Header */
+#branding {
+    background: url(../images/banner.jpg) top center no-repeat;
+    margin: 0; 
+    padding: 0;
+    height: 120px;
+}
+#branding h1 {
+    margin: 0;
+    padding-left: 20px;
+    font-weight: bold;
+    font-family: Cambria, Palatino Linotype, Book Antiqua, Arial, Sans-Serif;
+}
+#branding h2 {
+	color: #ffffff;
+	font-size: 1.1em;
+	margin-left: 140px;
+	margin-top: 0pt;
+	font-style: italic;
+}
+#branding a:link, #branding a:visited, #branding a:active, #branding a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+/* Search */
+#searchform {
+	display: inline;
+	float: right;
+	margin: 40px 10px 0 10px;
+	padding: 0 20px;
+	text-align: left;
+}
+#searchform input[type=text] {
+	width: 242px;
+	color: #999;
+	float: left;
+	padding-right: 16px;
+	height: 20px;
+}
+.go  {
+	margin-top: 6px;
+	margin-left: -25px;
+	color: #000;
+	display: inline;
+	float: right;
+}
+
+/* Main content area */
+#main {
+	background: url(../images/bg-main.png) repeat-x;
+	padding: 10px;
+	margin: 0;
+	min-height: 400px;
+}
+#content {
+	margin: 0 auto;
+	padding: 0 20px;
+	max-width: 1055px;
+}
+
+/* Photosets page */
+#loading {
+	display: none;
+	background-image: url(../images/loading.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#photosetsGrid {
+	padding: 0;
+	margin: 0;
+}
+#photosetsGrid  li:hover {
+	background-color:#B6C9A5;
+}
+#photosetsGrid  li {
+	float: left;
+	display: block;	
+	margin:0 5px 5px 0;
+	padding: 10px 10px 5px 10px;
+	width:185px;
+	height:175px;
+	font-size: .75em;
+	overflow:hidden;	
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+#photosetsGrid  .photoset-info {
+	font-weight: bold;
+	color: #000;
+}
+#photosetsPager {
+	float: left;
+}
+
+/* Pager */
+ul.pagerButtons li span.active em{background-color:#ccc;}
+ul.pagerButtons{font-size:10px;line-height:16px; padding-left: 0;}
+ul.pagerButtons li{float:left;display:inline;margin:0 4px 0 0;height:20px;}
+ul.pagerButtons li{text-align:center;}
+ul.pagerButtons li a,ul.pagerButtons li em {
+	display:block;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #ddd;
+	height:16px;
+	/*background-position:center 4px;*/
+	background-repeat:no-repeat;color:#000!important;
+	white-space:nowrap;
+	text-decoration:none;
+	-moz-box-shadow:0 1px 2px rgba(0,0,0,0.25);
+	-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.25);
+	box-shadow:0 1px 2px rgba(0,0,0,0.25);
+}
+ul.pagerButtons li span.ellipsis {
+	display:block;
+	white-space:nowrap;
+	text-decoration:none;
+	font-size: larger;
+	font-weight: bold;
+	vertical-align: bottom;
+}
+ul.pagerButtons li a,ul.pagerButtons li em{padding:2px 4px;background-color:#fff;}
+
+ul.pagerButtons li a.active{background-color:#ccc;}
+ul.pagerButtons li a:hover,ul.pagerButtons li a:focus{color:#000;background-color:#B6C9A5;text-decoration:none;}
+ul.pagerButtons li em{font-style:normal;}
+ul.pagerButtons li.ellipsis {border: 0; color: red;}
+
+/* Photoset and search submenu */
+#submenu {
+	font-weight: bold;
+}
+#submenu ul  {
+	margin: 0;
+	padding-left: 0;
+	font-size: 1em;
+	line-height: 20px;
+	white-space: nowrap;
+}
+#submenu li {
+	list-style-type: none;
+	display: inline;
+}
+#submenu a:link, #submenu a:visited {
+	padding: 4px 10px 0 0;
+	text-decoration: none;
+}
+#photosetTitle {
+    padding-left: 10px;
+}
+#slideshow {
+	position: absolute;
+	right: 10px;
+	top: 237px;
+	font-size: 1.1em;
+}
+.searchTerm {
+	font-style: italic;
+}
+#slide {
+	float: right;
+}
+
+/* Photoset page */
+.thumbsSide {
+	float: left;
+	height: 500px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.thumbsTop {
+	height: 100px;
+	margin-bottom: 10px;
+	white-space: nowrap;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+.thumbs img {
+	margin: 0 1px 2px 1px;
+}
+.thumbs img:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+.notSelected {
+	opacity: 0.4;
+}
+.photoRight {
+	float: right;
+	padding-left: 20px;
+}
+#photosetMain {
+	max-width: 640px;	
+	font-size: .9em;
+}
+#photoMetadata {
+	font-size: .8em;
+	font-weight: bold;
+	color: #999;
+	line-height: 25px;
+	vertical-align: middle;
+}
+#photoCounter {
+	float: left;
+}
+#dateTaken {
+	float: right;
+	text-align: right;
+}
+#prevButton, #nextButton  {
+    float: left; 
+    width: 25px; 
+    height: 25px; 
+    text-indent: -9999px;
+}
+#prevButton {
+    background: url(../images/controls.png) no-repeat -75px 0px;    
+}
+#prevButton:hover  {
+    background-position: -75px -25px;
+	cursor: pointer;
+}
+#nextButton {
+    background: url(../images/controls.png) no-repeat -50px 0px; 
+}
+#nextButton:hover {
+    background-position: -50px -25px;
+	cursor: pointer;
+}
+#photoTitle {
+	margin: 5px 0 0 0;
+}

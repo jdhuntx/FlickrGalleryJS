@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Photo Gallery</title>
+		<link rel="stylesheet" media="all" href="css/style.css" />
+		<script src="js/modernizr.2.5.1.js"></script>
+	</head>
+
+	<body>
+		<header id="branding">
+			<hgroup>
+				<h1><a href="index.html" title="jdhunt.net" rel="home">Photo Gallery</a></h1>
+			</hgroup>
+			<form method="get" id="searchform" action="search.html">
+				<div id="searchFields">     
+					<input type="text" value="Enter search text" name="s" id="s" onfocus="if (this.value == 'Enter search text') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter search text';}" />
+					<input type="image" src="images/go.png" align="top" alt="Search" class="go" value="Search" />
+				</div>
+			</form>
+		</header>
+
+		<div id="main">	
+			<div id="content" role="main" class="contentArea">
+				<div id="loading"></div>
+				<ul id="photosetsGrid"></ul>
+				<ul id="photosetsPager" class="pagerButtons"></ul>
+			</div>
+		</div>
+	</body>
+	
+	<input type="hidden" id="numberOfPages" />
+	
+	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+	<script src="js/flickr-min.js"></script>
+	<script src="js/photoGallery.js"></script>
+	<script>
+		$(document).ready(function () {			
+			var page = window.location.hash.replace('#', '');
+			if (page == '') page = 1;
+			
+			loadPhotosets(page);
+		})
+	</script>
+</html>
