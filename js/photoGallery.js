@@ -1,4 +1,4 @@
-var flickrApi = '42fafad1dce354de3fd04ff79e334907';
+var flickrApi = '[YOUR API KEY HERE]';
 var flickrUserId = '53353745@N00';
 var flickrUserName = 'jdhunt';
 var LIGHTBOX_MODE = 'l';
